@@ -109,7 +109,6 @@ def shutdown():
     return 'Server shutting down...'    
 
 if __name__ == "__main__":
-    return 0
     app.run(host='127.0.0.1',port=5000)
     
    
