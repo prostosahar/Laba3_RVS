@@ -97,16 +97,12 @@ def one():
 def base():
     return render_template("base.html")
 
-def shutdown_server():
+@app.before_first_request
+def close_flask():
     func = request.environ.get('werkzeug.server.shutdown')
     if func is None:
         raise RuntimeError('Not running with the Werkzeug Server')
-    func()
-    
-@app.route('/', methods=['POST'])
-def shutdown():
-    shutdown_server()
-    return 'Server shutting down...'    
+    func()    
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=5000)
