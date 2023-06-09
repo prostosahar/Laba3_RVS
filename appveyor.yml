@@ -1,6 +1,6 @@
 install:
 - py -m venv env
--env/Scripts/activate
+- env/Scripts/activate
 - pip install flask
 - pip install numpy
 - pip install pillow
