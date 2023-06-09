@@ -11,8 +11,11 @@ install:
   - ps: .\env\Scripts\activate
   - ps: py -m pip install flask numpy pillow matplotlib Flask-WTF wtforms --upgrade pip
 
-test_script:
-  - ps: .\env\Scripts\activate
-  - ps: py main.py
+# test_script:
+#   - ps: .\env\Scripts\activate
+#   - ps: py main.py
+  
+script:
+  - pytest
 
 build: off
