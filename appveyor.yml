@@ -13,6 +13,6 @@ install:
 
 test_script:
   - ps: .\env\Scripts\activate
-  - ps: py main.py
+  - ps: py -m main.py
 
 build: off
