@@ -1,4 +1,7 @@
-test_script:
+image:
+- python3
+
+install:
 - py -m venv env
 - env/Scripts/activate
 - pip install flask
@@ -7,5 +10,7 @@ test_script:
 - pip install matplotlib
 - pip install -U Flask-WTF
 - pip install wtforms
+
+test_script:
 - py ./main.py
 build: off
