@@ -8,3 +8,4 @@ test_script:
 - pip install -U Flask-WTF
 - pip install wtforms
 - py ./main.py
+build: off
