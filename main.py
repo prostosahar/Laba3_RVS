@@ -76,7 +76,6 @@ class MyForm(FlaskForm):
 
 @app.route('/', methods=['GET', 'POST'])
 def captcha():
-    shutdown()
     form = MyForm()
     if form.validate_on_submit():
         return render_template('one.html', form=form)
@@ -110,6 +109,7 @@ def shutdown():
     return 'Server shutting down...'    
 
 if __name__ == "__main__":
+    return 0
     app.run(host='127.0.0.1',port=5000)
     
    
