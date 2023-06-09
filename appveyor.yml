@@ -9,10 +9,10 @@ install:
   - ps: Install-Package Python -ForceBootstrap
   - ps: py -m venv env
   - ps: .\env\Scripts\activate
-  - ps: py -m pip install flask numpy pillow matplotlib Flask-WTF wtforms'
+  - ps: py -m pip install flask numpy pillow matplotlib Flask-WTF wtforms
 
 test_script:
   - ps: .\env\Scripts\activate
-  - ps: py main.py'
+  - ps: py main.py
 
 build: off
