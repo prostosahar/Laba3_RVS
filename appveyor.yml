@@ -14,7 +14,7 @@ install:
 test_script:
   - ps: .\env\Scripts\activate
   - ps: py main.py
-  - ps: py pytest.py
+  - ps: py tests\pytest.py
   
 
 build: off
