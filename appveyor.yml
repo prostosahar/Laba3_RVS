@@ -1,18 +1,24 @@
 image:
   - Visual Studio 2019
-
+  
 environment:
   matrix:
-    - PYTHON: "C:\\Python39"
+  # - TOXENV: py27  # https://devguide.python.org/devcycle/#end-of-life-branches
+  # - TOXENV: py35
+  - TOXENV: py36    # https://devguide.python.org/#status-of-python-branches
+  - TOXENV: py37
+  - TOXENV: py38
+  - TOXENV: py39
+  - TOXENV: py310
 
 install:
   - ps: Install-Package Python -ForceBootstrap
-  - ps: '%PYTHON%\python.exe -m venv env'
+  - ps: py -m venv env'
   - ps: .\env\Scripts\activate
-  - ps: '%PYTHON%\python.exe -m pip install flask numpy pillow matplotlib Flask-WTF wtforms'
+  - ps: py -m pip install flask numpy pillow matplotlib Flask-WTF wtforms'
 
 test_script:
   - ps: .\env\Scripts\activate
-  - ps: '%PYTHON%\python.exe main.py'
+  - ps: py main.py'
 
 build: off
