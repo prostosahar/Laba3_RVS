@@ -1,5 +1,5 @@
 image:
-- py
+- python 3.9
 
 install:
 - py -m venv env
