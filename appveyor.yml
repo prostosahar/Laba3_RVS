@@ -7,6 +7,5 @@ install:
 - pip install matplotlib
 - pip install -U Flask-WTF
 - pip install wtforms
-- py ./main.py
 test_script:
 - py ./main.py
