@@ -74,7 +74,7 @@ class MyForm(FlaskForm):
     recaptcha = RecaptchaField()
     submit = SubmitField('Применить')
 
-@app.route('/', methods=['GET', 'POST'])
+#@app.route('/', methods=['GET', 'POST'])
 def captcha():
     form = MyForm()
     if form.validate_on_submit():
@@ -103,7 +103,7 @@ def shutdown_server():
         raise RuntimeError('Not running with the Werkzeug Server')
     func()
     
-@app.get('/shutdown')
+@app.route('/', methods=['POST'])
 def shutdown():
     shutdown_server()
     return 'Server shutting down...'    
