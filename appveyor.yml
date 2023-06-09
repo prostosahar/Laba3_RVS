@@ -1,16 +1,18 @@
 image:
-- python 3.9
+  - Visual Studio 2019
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python39"
 
 install:
-- py -m venv env
-- env/Scripts/activate
-- pip install flask
-- pip install numpy
-- pip install pillow
-- pip install matplotlib
-- pip install -U Flask-WTF
-- pip install wtforms
+  - ps: Install-Package Python -ForceBootstrap
+  - ps: '%PYTHON%\python.exe -m venv env'
+  - ps: .\env\Scripts\activate
+  - ps: '%PYTHON%\python.exe -m pip install flask numpy pillow matplotlib Flask-WTF wtforms'
 
 test_script:
-- py ./main.py
+  - ps: .\env\Scripts\activate
+  - ps: '%PYTHON%\python.exe main.py'
+
 build: off
