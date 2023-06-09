@@ -1,5 +1,5 @@
 image:
-- python
+- py
 
 install:
 - py -m venv env
