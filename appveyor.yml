@@ -1,4 +1,4 @@
-install:
+test_script:
 - py -m venv env
 - env/Scripts/activate
 - pip install flask
@@ -7,5 +7,4 @@ install:
 - pip install matplotlib
 - pip install -U Flask-WTF
 - pip install wtforms
-test_script:
 - py ./main.py
